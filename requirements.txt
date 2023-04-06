@@ -1,0 +1,5 @@
+asyncio
+telethon
+pyfiglet
+termcolor
+colorama

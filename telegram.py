@@ -12,7 +12,7 @@ print(colored_ascii_art)
 
 # Replace with API ID and API hash
 api_id = 12345
-api_hash = 'hash ip' #api hash from https://my.telegram.org/auth
+api_hash = 'api hash' #api hash from https://my.telegram.org/auth
 
 # Replace phone_number with your phone number with contry code
 phone_number = '20123456'

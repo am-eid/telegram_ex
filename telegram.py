@@ -36,15 +36,18 @@ async def main():
     selected_entity = entities[group_index]
     input_entity = selected_entity.input_entity
     participants = await client.get_participants(input_entity, aggressive=True)
+    
     name=input('\033[1;31m'+"Enter Name to save : "+'\033[0m')
     count=0
     with open(name+'.csv', mode='w', newline='', encoding='utf-8') as file:
         writer = csv.writer(file)
         writer.writerow(['ID', 'Full Name', 'Username', 'Phone'])
+        
         for participant in participants:
             count+=1
             full_name = f"{participant.first_name} {participant.last_name}" if participant.first_name and participant.last_name else participant.first_name or participant.last_name or ""
             writer.writerow([participant.id, full_name, participant.username, participant.phone])
+            
     print('\033[1;32m'+f'Done Extract {count} Member'+'\033[0m')
     a=input('\033[1;31m'+"Enter to exit.. : "+'\033[0m')
 asyncio.run(main())
